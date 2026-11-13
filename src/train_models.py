@@ -11,7 +11,7 @@ train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
     shear_range=0.2,
     zoom_range=0.2,
     horizontal_flip=True,
-    validation_split=0.2 # 20% data validation এর জন্য ভাগ করা হলো
+    validation_split=0.2 
 )
 
 train_generator = train_datagen.flow_from_directory(
@@ -43,7 +43,7 @@ model = models.Sequential([
     
     layers.Flatten(),
     layers.Dense(128, activation='relu'),
-    layers.Dropout(0.5), # Model যাতে মুখস্থ না করে, তাই ড্রপআউট
+    layers.Dropout(0.5), 
     layers.Dense(1, activation='sigmoid') # Binary output (Normal vs Pothole)
 ])
 
